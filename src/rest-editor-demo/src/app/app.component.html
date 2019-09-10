@@ -1,15 +1,41 @@
-<h1>
-  Welcome to {{ title }}!
-</h1>
+<section class="title">
+  <h1>
+    @mathrix/rest-editor
+  </h1>
+</section>
+<mat-card>Options
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <mat-slide-toggle [(ngModel)]="policy.delete">Autoriser la suppresion ?</mat-slide-toggle>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-slide-toggle [(ngModel)]="policy.edit">Autoriser l'édition ?</mat-slide-toggle>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-slide-toggle [(ngModel)]="policy.move">Autoriser le changement d'ordre ?</mat-slide-toggle>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-slide-toggle [(ngModel)]="policy.visible">Autoriser le changement de visibilité ?</mat-slide-toggle>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-slide-toggle [(ngModel)]="policy.add">Autoriser l'ajout ?</mat-slide-toggle>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
 
 <rest-editor [displayedColumns]="displayedColumns"
              [dataSource]="dataSource"
              [policy]="policy"
              [isLoading]="isLoading"
+             matSort
+             (edit)="startEdit($event)"
+             (delete)="delete($event)"
+             (visible)="visible($event)"
 >
-  <!-- name column -->
   <ng-container matColumnDef="details">
-    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Détails</mat-header-cell>
     <mat-cell *matCellDef="let element">{{element.details}}</mat-cell>
   </ng-container>
   <ng-container matColumnDef="mission_name">
@@ -20,4 +46,5 @@
     <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
     <mat-cell *matCellDef="let element">{{element.launch_date_unix}}</mat-cell>
   </ng-container>
+
 </rest-editor>
