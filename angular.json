@@ -1,35 +1,26 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "src",
   "projects": {
-    "rest-editor-lib": {
-      "root": "projects/rest-editor-lib",
-      "sourceRoot": "projects/rest-editor-lib/src",
+    "rest-editor": {
+      "root": "src/rest-editor",
+      "sourceRoot": "src/rest-editor/src",
       "projectType": "library",
       "prefix": "rest-editor",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/rest-editor-lib/tsconfig.lib.json",
-            "project": "projects/rest-editor-lib/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/rest-editor-lib/src/test.ts",
-            "tsConfig": "projects/rest-editor-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/rest-editor-lib/karma.conf.js"
+            "tsConfig": "src/rest-editor/tsconfig.lib.json",
+            "project": "src/rest-editor/ng-package.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/rest-editor-lib/tsconfig.lib.json",
-              "projects/rest-editor-lib/tsconfig.spec.json"
+              "src/rest-editor/tsconfig.lib.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -38,9 +29,9 @@
         }
       }
     },
-    "rest-editor-app": {
-      "root": "projects/rest-editor-app/",
-      "sourceRoot": "projects/rest-editor-app/src",
+    "rest-editor-demo": {
+      "root": "src/rest-editor-demo/",
+      "sourceRoot": "src/rest-editor-demo/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -48,17 +39,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rest-editor-app",
-            "index": "projects/rest-editor-app/src/index.html",
-            "main": "projects/rest-editor-app/src/main.ts",
-            "polyfills": "projects/rest-editor-app/src/polyfills.ts",
-            "tsConfig": "projects/rest-editor-app/tsconfig.app.json",
+            "outputPath": "dist/rest-editor-demo",
+            "index": "src/rest-editor-demo/src/index.html",
+            "main": "src/rest-editor-demo/src/main.ts",
+            "polyfills": "src/rest-editor-demo/src/polyfills.ts",
+            "tsConfig": "src/rest-editor-demo/tsconfig.app.json",
             "assets": [
-              "projects/rest-editor-app/src/favicon.ico",
-              "projects/rest-editor-app/src/assets"
+              "src/rest-editor-demo/src/favicon.ico",
+              "src/rest-editor-demo/src/assets"
             ],
             "styles": [
-              "projects/rest-editor-app/src/styles.css"
+              "src/rest-editor-demo/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -67,8 +58,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/rest-editor-app/src/environments/environment.ts",
-                  "with": "projects/rest-editor-app/src/environments/environment.prod.ts"
+                  "replace": "src/rest-editor-demo/src/environments/environment.ts",
+                  "with": "src/rest-editor-demo/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -93,72 +84,27 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rest-editor-app:build"
+            "browserTarget": "rest-editor-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rest-editor-app:build:production"
+              "browserTarget": "rest-editor-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rest-editor-app:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/rest-editor-app/src/test.ts",
-            "polyfills": "projects/rest-editor-app/src/polyfills.ts",
-            "tsConfig": "projects/rest-editor-app/tsconfig.spec.json",
-            "karmaConfig": "projects/rest-editor-app/karma.conf.js",
-            "styles": [
-              "projects/rest-editor-app/src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "projects/rest-editor-app/src/favicon.ico",
-              "projects/rest-editor-app/src/assets"
-            ]
+            "browserTarget": "rest-editor-demo:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/rest-editor-app/tsconfig.app.json",
-              "projects/rest-editor-app/tsconfig.spec.json"
+              "src/rest-editor-demo/tsconfig.app.json",
+              "src/rest-editor-demo/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "rest-editor-app-e2e": {
-      "root": "projects/rest-editor-app-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/rest-editor-app-e2e/protractor.conf.js",
-            "devServerTarget": "rest-editor-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "rest-editor-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/rest-editor-app-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -167,5 +113,10 @@
       }
     }
   },
-  "defaultProject": "rest-editor-lib"
+  "defaultProject": "rest-editor",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
