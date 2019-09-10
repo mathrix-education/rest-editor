@@ -1,0 +1,39 @@
+:host {
+  display: block; // important for absolute position of progress bar
+  position: relative;
+  min-width: 650px;
+}
+
+
+/** add small class to a column and it will shrink. used for id columns */
+:host ::ng-deep .small {
+  max-width: 40px;
+}
+
+
+
+.progress-bar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+mat-row {
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0,0,0,.04);
+  }
+}
+
+.drag-button, .drag-button mat-icon {
+  cursor: grab;
+}
+
+.btn-gray {
+  color: lightgray;
+}
+
+.btn-green{
+  color: darkgreen;
+}

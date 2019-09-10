@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {RestEditorLibModule} from 'rest-editor';
+import {MatTableModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {RestEditorLibModule} from 'rest-editor';
   ],
   imports: [
     RestEditorLibModule,
-    BrowserModule
+    BrowserModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,1 @@
-export * from './rest-editor-lib.module';
+export * from './rest-editor.module';

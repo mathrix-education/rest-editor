@@ -1,0 +1,80 @@
+<div class="progress-bar-container">
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+</div>
+<!-- main table -->
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList cdkDropListLockAxis="y" [cdkDropListDisabled]="!isDragging" (cdkDropListDropped)="dropElement($event)">
+
+  <ng-content></ng-content>
+
+  <ng-container matColumnDef="actions" stickyEnd cdkColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef [ngStyle]="actionCellStyle">
+      <!-- add -->
+      <button mat-icon-button color="primary"
+              matTooltip="ajouter"
+              (click)="add.emit()" *ngIf="policy.add">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let element; let index = index" [ngStyle]="actionCellStyle">
+      <!-- visible -->
+      <button mat-icon-button
+              [color]="'primary'"
+              matTooltip="changer la visibilité"
+              *ngIf="policy.visible"
+              (click)="visible.emit(element); $event.stopPropagation()">
+        <mat-icon *ngIf="element.visible" class="btn-green">visibility</mat-icon>
+        <mat-icon *ngIf="!element.visible" class="btn-gray" >visibility_off</mat-icon>
+      </button>
+
+      <!-- edit -->
+      <button mat-icon-button color="accent"
+              matTooltip="éditer"
+              *ngIf="policy.edit" (click)="edit.emit(element); $event.stopPropagation()">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <!-- move -->
+      <button mat-icon-button color="accent"
+              matTooltip="réordonner"
+              *ngIf="policy.move"
+              (mousedown)="isDragging = true"
+              (mouseleave)="isDragging = false"
+              class="drag-button">
+        <mat-icon>drag_indicator</mat-icon>
+      </button>
+
+      <!-- delete -->
+      <button mat-icon-button color="warn"
+              matTooltip="supprimer"
+              *ngIf="policy.delete" (click)="askDelete(element); $event.stopPropagation()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let element; columns: displayedColumns"
+           cdkDrag
+           appHighlight (click)="selectedElement.emit(element)"
+  ></mat-row>
+</mat-table>
+
+
+
+<!-- default delete dialog -->
+<ng-template #deleteDialog>
+  <h2 matDialogTitle>Suppression</h2>
+
+  <mat-dialog-content>
+    <p>Vous allez supprimer cet élément. Etes-vous certain ?</p>
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions align="end">
+    <button mat-button matDialogClose>Annuler</button>
+    <button mat-button matDialogClose color="primary"
+            (click)="confirmDelete(); $event.stopPropagation()">Supprimer
+    </button>
+  </mat-dialog-actions>
+</ng-template>
