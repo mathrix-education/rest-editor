@@ -1,10 +1,39 @@
 {
-  "name": "rest-editor-lib",
-  "version": "0.0.1",
+  "name": "@mathrix/rest-editor",
+  "version": "1.0.0",
+  "description": "REST editor for Mathrix Education projects",
+  "keywords": [
+    "rest",
+    "editor",
+    "datafield",
+    "data"
+  ],
+  "homepage": "https://github.com/mathrix-education/rest-editor#readme",
+  "bugs": {
+    "url": "https://github.com/mathrix-education/rest-editor/issues"
+  },
+  "license": "UNLICENSED",
+  "people": [
+    {
+      "name": "Julien Schneider",
+      "email": "julien@mathrix.fr"
+    },
+    {
+      "name": "Clément Despiney",
+      "email": "clement@mathrix.fr"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathrix-education/rest-editor"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",
     "@angular/cdk": "latest",
     "@angular/material": "latest"
+  },
+  "publishConfig": {
+    "registery": "https://verdaccio.mathrix.fr"
   }
 }
