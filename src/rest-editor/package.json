@@ -38,6 +38,6 @@
     "@angular/material": "^8.2.0"
   },
   "publishConfig": {
-    "registery": "https://verdaccio.mathrix.fr"
+    "registry": "https://verdaccio.mathrix.fr"
   }
 }
