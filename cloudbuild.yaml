@@ -17,5 +17,5 @@ steps:
       - '-c'
       - |
         deploy/scripts/setup_registry.sh
-        deploy/scripts/publish.sh
+        deploy/scripts/publish.sh -c $SHORT_SHA -t $TAG_NAME
 

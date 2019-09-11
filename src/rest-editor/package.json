@@ -13,6 +13,10 @@
     "url": "https://github.com/mathrix-education/rest-editor/issues"
   },
   "license": "UNLICENSED",
+  "author": {
+    "name": "Julien Schneider",
+    "email": "julien@mathrix.fr"
+  },
   "people": [
     {
       "name": "Julien Schneider",
