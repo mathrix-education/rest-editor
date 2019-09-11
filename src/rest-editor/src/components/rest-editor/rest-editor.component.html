@@ -1,8 +1,10 @@
 <div class="progress-bar-container">
-<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+  <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
 </div>
+
 <!-- main table -->
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList cdkDropListLockAxis="y" [cdkDropListDisabled]="!isDragging" (cdkDropListDropped)="dropElement($event)">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList cdkDropListLockAxis="y"
+           [cdkDropListDisabled]="!isDragging" (cdkDropListDropped)="dropElement($event)">
 
   <ng-content></ng-content>
 
@@ -24,7 +26,7 @@
               *ngIf="policy.visible"
               (click)="visible.emit(element); $event.stopPropagation()">
         <mat-icon *ngIf="element.visible" class="btn-green">visibility</mat-icon>
-        <mat-icon *ngIf="!element.visible" class="btn-gray" >visibility_off</mat-icon>
+        <mat-icon *ngIf="!element.visible" class="btn-gray">visibility_off</mat-icon>
       </button>
 
       <!-- edit -->
@@ -56,10 +58,9 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let element; columns: displayedColumns"
            cdkDrag
-           appHighlight (click)="selectedElement.emit(element)"
-  ></mat-row>
+           restEditorHighlight (click)="selectedElement.emit(element)">
+  </mat-row>
 </mat-table>
-
 
 
 <!-- default delete dialog -->
@@ -67,14 +68,14 @@
   <h2 matDialogTitle>Suppression</h2>
 
   <mat-dialog-content>
-    <p>Vous allez supprimer cet élément. Etes-vous certain ?</p>
+    <p>Vous allez supprimer cet élément. Êtes-vous sûr de vouloir continuer ?</p>
   </mat-dialog-content>
-
 
   <mat-dialog-actions align="end">
     <button mat-button matDialogClose>Annuler</button>
     <button mat-button matDialogClose color="primary"
-            (click)="confirmDelete(); $event.stopPropagation()">Supprimer
+            (click)="confirmDelete(); $event.stopPropagation()">
+      Supprimer
     </button>
   </mat-dialog-actions>
 </ng-template>

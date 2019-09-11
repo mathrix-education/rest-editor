@@ -1,7 +1,7 @@
 {
   "name": "@mathrix/rest-editor",
   "version": "1.0.0",
-  "description": "REST editor for Mathrix Education projects",
+  "description": "REST Editor for Mathrix Education projects",
   "keywords": [
     "rest",
     "editor",
@@ -19,6 +19,10 @@
       "email": "julien@mathrix.fr"
     },
     {
+      "name": "Mathieu Bour",
+      "email": "mathieu@mathrix.fr"
+    },
+    {
       "name": "Clément Despiney",
       "email": "clement@mathrix.fr"
     }
@@ -28,10 +32,10 @@
     "url": "https://github.com/mathrix-education/rest-editor"
   },
   "peerDependencies": {
-    "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0",
-    "@angular/cdk": "latest",
-    "@angular/material": "latest"
+    "@angular/common": "^8.2.0",
+    "@angular/core": "^8.2.0",
+    "@angular/cdk": "^8.2.0",
+    "@angular/material": "^8.2.0"
   },
   "publishConfig": {
     "registery": "https://verdaccio.mathrix.fr"
