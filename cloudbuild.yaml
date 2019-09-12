@@ -1,0 +1,21 @@
+steps:
+  - id: 'gcloud:kms:decrypt'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'deploy/scripts/decrypt.sh'
+  - id: 'yarn:install'
+    name: 'node:12-alpine'
+    entrypoint: 'yarn'
+    args: ['install']
+  - id: 'ng:build'
+    name: 'node:12-alpine'
+    entrypoint: 'yarn'
+    args: ['run', 'ng', 'build']
+  - id: 'npm:publish'
+    name: 'node:12-alpine'
+    entrypoint: 'ash'
+    args:
+      - '-c'
+      - |
+        deploy/scripts/setup_registry.sh
+        deploy/scripts/publish.sh -c $SHORT_SHA -t $TAG_NAME
+
