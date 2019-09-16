@@ -98,7 +98,11 @@ export const UPCOMING_LAUNCHES_MOCK = [
       youtube_id: null,
       flickr_images: []
     },
-    details: 'This mission will launch the first batch of Starlink version 1.0 satellites, from SLC-40, Cape Canaveral AFS. It is the second Starlink launch overall. Starlink is a low Earth orbit broadband internet constellation developed and owned by SpaceX which will eventually consist of nearly 12 000 satellites and will provide low latency internet service to ground terminals around the world. The booster for this mission is expected to land on OCISLY.',
+    details: 'This mission will launch the first batch of Starlink version 1.0 satellites, from SLC-40, Cape Canaveral '
+      + 'AFS. It is the second Starlink launch overall. Starlink is a low Earth orbit broadband internet constellation '
+      + 'developed and owned by SpaceX which will eventually consist of nearly 12 000 satellites and will provide low '
+      + 'latency internet service to ground terminals around the world. The booster for this mission is expected to '
+      + 'land on OCISLY.',
     upcoming: true,
     static_fire_date_utc: null,
     static_fire_date_unix: null,
@@ -533,7 +537,9 @@ export const UPCOMING_LAUNCHES_MOCK = [
       youtube_id: null,
       flickr_images: []
     },
-    details: 'JCSat 18 / Kacific 1 is a joint high-throughput communication satellite of Kacific Broadband Satellites Pte Ltd, Singapore, and SKY Perfect JSAT Corporation, Japan, to be operated in Ka-band for mobile telephone, data and internet users throughout the Asia-Pacific region.',
+    details: 'JCSat 18 / Kacific 1 is a joint high-throughput communication satellite of Kacific Broadband Satellites'
+      + 'Pte Ltd, Singapore, and SKY Perfect JSAT Corporation, Japan, to be operated in Ka-band for mobile telephone, '
+      + 'data and internet users throughout the Asia-Pacific region.',
     upcoming: true,
     static_fire_date_utc: null,
     static_fire_date_unix: null,
