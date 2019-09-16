@@ -1,0 +1,21 @@
+name: Publish to GitHub Package Registry
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v1
+    - name: Setup Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+        registry-url: 'https://npm.pkg.github.com'
+    - name: Build
+      run: |
+        yarn install
+        yarn run ng build
+    - name: Publish
+      run: cd dist/rest-editor && yarn publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

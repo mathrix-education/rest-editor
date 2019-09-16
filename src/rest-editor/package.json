@@ -1,6 +1,6 @@
 {
-  "name": "@mathrix/rest-editor",
-  "version": "1.0.0",
+  "name": "@mathrix-education/rest-editor",
+  "version": "1.0.0-prepublish",
   "description": "REST Editor for Mathrix Education projects",
   "keywords": [
     "rest",
