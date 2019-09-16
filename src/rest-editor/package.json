@@ -1,6 +1,6 @@
 {
-  "name": "@mathrix/rest-editor",
-  "version": "1.0.0",
+  "name": "@mathrix-education/rest-editor",
+  "version": "1.0.0-prepublish",
   "description": "REST Editor for Mathrix Education projects",
   "keywords": [
     "rest",
@@ -36,9 +36,9 @@
     "url": "https://github.com/mathrix-education/rest-editor"
   },
   "peerDependencies": {
+    "@angular/cdk": "^8.2.0",
     "@angular/common": "^8.2.0",
     "@angular/core": "^8.2.0",
-    "@angular/cdk": "^8.2.0",
     "@angular/material": "^8.2.0"
   },
   "publishConfig": {

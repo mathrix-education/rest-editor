@@ -1,6 +1,6 @@
 {
-  "name": "rest-editor",
-  "version": "0.0.0",
+  "name": "@mathrix-education/rest-editor-workspace",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
