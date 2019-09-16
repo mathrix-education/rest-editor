@@ -13,9 +13,11 @@ jobs:
         registry-url: 'https://npm.pkg.github.com'
     - name: Build
       run: |
-        yarn install
-        yarn run ng build
+        npm install
+        npm run ng build
     - name: Publish
-      run: cd dist/rest-editor && yarn publish
+      run: |
+        cd dist/rest-editor
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
