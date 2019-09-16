@@ -1,4 +1,4 @@
-name: Test and lint
+name: Test with jest
 on: [push]  # Always
 jobs:
   build:
@@ -12,7 +12,5 @@ jobs:
           node-version: 12.x
       - name: Install
         run: npm install
-      - name: Lint
-        run: npm run ng lint
       - name: Test
         run: npm run ng test
