@@ -1,5 +1,6 @@
 name: Publish to GitHub Package Registry
-on: [push]
+on:
+  push: [master]
 jobs:
   build:
     runs-on: ubuntu-latest

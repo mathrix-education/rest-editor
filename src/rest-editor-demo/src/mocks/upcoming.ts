@@ -533,7 +533,9 @@ export const UPCOMING_LAUNCHES_MOCK = [
       youtube_id: null,
       flickr_images: []
     },
-    details: 'JCSat 18 / Kacific 1 is a joint high-throughput communication satellite of Kacific Broadband Satellites Pte Ltd, Singapore, and SKY Perfect JSAT Corporation, Japan, to be operated in Ka-band for mobile telephone, data and internet users throughout the Asia-Pacific region.',
+    details: 'JCSat 18 / Kacific 1 is a joint high-throughput communication satellite of Kacific Broadband Satellites'
+      + 'Pte Ltd, Singapore, and SKY Perfect JSAT Corporation, Japan, to be operated in Ka-band for mobile telephone, '
+      + 'data and internet users throughout the Asia-Pacific region.',
     upcoming: true,
     static_fire_date_utc: null,
     static_fire_date_unix: null,
