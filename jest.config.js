@@ -5,13 +5,13 @@
 const esModules = [];
 
 module.exports = {
-  globals: {
-    "ts-jest": {
-      "allowSyntheticDefaultImports": true
-    }
-  },
-  transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules.join('|')})`],
-  "transform": {
-    "^.+\\.js$": "babel-jest"
-  }
+  // globals: {
+  //   "ts-jest": {
+  //     "allowSyntheticDefaultImports": true
+  //   }
+  // },
+  // transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules.join('|')})`],
+  // "transform": {
+  //   "^.+\\.js$": "babel-jest"
+  // }
 };
