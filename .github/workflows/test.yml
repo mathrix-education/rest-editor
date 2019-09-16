@@ -1,5 +1,5 @@
 name: Test and lint
-on: push  # Always
+on: [push]  # Always
 jobs:
   build:
     runs-on: ubuntu-latest
