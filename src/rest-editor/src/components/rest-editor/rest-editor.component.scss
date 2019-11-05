@@ -7,7 +7,7 @@
 
 /** add small class to a column and it will shrink. used for id columns */
 :host ::ng-deep .small {
-  max-width: 40px;
+  width: 40px;
 }
 
 
