@@ -5,7 +5,7 @@ on:
       - master
       - 'angular-9-rc-11'
     paths:
-      - src/rest-editor/package.json  # only publish if composer.json changes
+      - src/rest-editor/package.json  # only publish if package.json changes
 jobs:
   build:
     runs-on: ubuntu-latest
