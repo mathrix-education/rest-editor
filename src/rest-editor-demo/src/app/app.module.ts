@@ -2,9 +2,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
-import {RestEditorModule} from 'rest-editor';
-import {MatCardModule, MatListModule, MatPaginatorModule, MatSlideToggleModule, MatSortModule, MatTableModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {RestEditorModule} from '../../../rest-editor/src/rest-editor.module';
 
 @NgModule({
   declarations: [

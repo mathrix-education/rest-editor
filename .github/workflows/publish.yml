@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - angular-9-rc-11
     paths:
       - src/rest-editor/package.json  # only publish if composer.json changes
 jobs:

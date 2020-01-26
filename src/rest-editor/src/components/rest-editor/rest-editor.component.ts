@@ -12,10 +12,11 @@ import {
   ViewChild,
   ViewChildren
 } from '@angular/core';
-import {MatColumnDef, MatDialog, MatHeaderRowDef, MatRowDef, MatTable} from '@angular/material';
 import {Observable} from 'rxjs';
 import {HighlightDirective} from '../../directives/highlight.directive';
 import {PolicyEditor} from '../../interfaces/policy-editor.interface';
+import {MatColumnDef, MatHeaderRowDef, MatRowDef, MatTable} from '@angular/material/table';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'rest-editor',

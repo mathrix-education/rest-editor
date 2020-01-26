@@ -1,8 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {UPCOMING_LAUNCHES_MOCK} from '../mocks/upcoming';
-import {PolicyEditor} from 'rest-editor/interfaces/policy-editor.interface';
-import {MatSort} from '@angular/material';
+import {MatSort} from '@angular/material/sort';
+import {PolicyEditor} from '../../../rest-editor/src/interfaces/policy-editor.interface';
 
 @Component({
   selector: 'app-root',
